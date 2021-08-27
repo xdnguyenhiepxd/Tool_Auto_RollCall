@@ -24,10 +24,9 @@ if tentk!='':
 def pri():
     tk = txt_masv.get()
     pw = txt_mk.get()
-    if tentk=='':
-        with open("data.txt",'w') as file:
-            file.write(tk+"\n")
-            file.write(pw+"\n")
+    with open("data.txt",'w') as file:
+        file.write(tk+"\n")
+        file.write(pw+"\n")
     a = webdriver.Chrome('chromedriver.exe')
     a.get('http://sinhvien.epu.edu.vn/')
     a.find_element_by_name('ctl00$ucRight1$txtMaSV').send_keys(tk)
@@ -45,3 +44,4 @@ def pri():
 button=Button(cal,text='Run',width=20,height=3,bg='#34A2FE',command=pri)
 button.pack()
 cal.mainloop()
+
